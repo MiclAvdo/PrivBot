@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import Modal from './../Modal/Modal';
 import userService from './../../utils/userService';
+import Bot from './../../components/Bot/Bot';
 
 
 class App extends Component {
-  
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { 
       showModal: true,
       login: true
@@ -47,9 +47,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header >
-          <h1>PrivBot</h1>
-        </header>
         <Modal  login={this.state.login}
                 toggleLogin={this.state.toggleLogin}
                 showModal={this.state.showModal}
@@ -59,6 +56,7 @@ class App extends Component {
                 handleLogin={this.handleLogin}
                 handleSignup={this.handleSignup}
         />
+        <Bot />
       </div>
     );
   }

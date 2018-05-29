@@ -24,8 +24,8 @@ class LoginForm extends Component {
       })
       .catch(err => alert('Invalid Credentials'));
     }
-  
-    render(props) {
+
+    render() {
       return (
         <div>
             <h1 className="title">PrivBot</h1>

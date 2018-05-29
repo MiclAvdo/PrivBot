@@ -13,6 +13,7 @@
   }
   
   .Modal-content {
+    font-family: 'VT323', monospace;
     min-height: 20%; 
     min-width: 20%;
     border: 2px solid white;

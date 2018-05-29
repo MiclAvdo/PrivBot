@@ -8,9 +8,9 @@ const Modal = props => {
         <div className="Modal">
             <div className="Modal-content">
             {props.login ?
-            <LoginForm toggleLogin={props.toggleLogin}/>
+            <LoginForm {...props}/>
             :
-            <SignupForm toggleLogin={props.toggleLogin}/>
+            <SignupForm {...props}/>
             }
             </div>
         </div>
