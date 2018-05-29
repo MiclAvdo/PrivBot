@@ -4,7 +4,7 @@ import LoginForm from './../../components/LoginForm/LoginForm';
 import SignupForm from './../../components/SignupForm/SignupForm';
 
 const Modal = props => {
-    return props.showModal ? (
+    return !props.user ? (
         <div className="Modal">
             <div className="Modal-content">
             {props.login ?

@@ -27,7 +27,6 @@ app.get('/*', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-    console.log('socket request')
     socket.on('chat message', (text) => {
         console.log('text:', text);
         console.log('Message: ' + text);

@@ -19,7 +19,6 @@ class App extends Component {
     super(props);
     
     this.state = { 
-      showModal: true,
       login: true,
       outputYou: '...',
       outputBot: '...'
@@ -39,10 +38,6 @@ class App extends Component {
   startListen = () => {
     window.recognition.start();
   }
-  
-  toggleModal = () => {
-    this.setState({ showModal: !this.state.showModal });
-  };
 
   toggleLogin = () => {
     this.setState({ login: !this.state.login });
@@ -67,10 +62,7 @@ class App extends Component {
     window.recognition.addEventListener('result', (e) => {
       let last = e.results.length - 1;
       let text = e.results[last][0].transcript;
-    
-      console.log('text', text);
-      console.log('last', last);
-
+  
       this.setState({
         outputYou: text
       })
@@ -80,7 +72,6 @@ class App extends Component {
 
     window.recognition.addEventListener('speechend', () => {
       window.recognition.stop();
-      console.log("speech has finished");
     });
   
     socket.on('bot reply', (replyText) => {
@@ -94,7 +85,6 @@ class App extends Component {
   }
 
   componenetDidMount() {
-    console.log(window.recognition)
     let user = userService.getUser();
     this.setState({ user });
 
@@ -104,17 +94,17 @@ class App extends Component {
     return (
       <div>
         <Modal  login={this.state.login}
-                toggleLogin={this.state.toggleLogin}
-                showModal={this.state.showModal}
-                toggleModal={this.state.toggleModal} 
+                toggleLogin={this.toggleLogin}
                 handleSubmit={this.handleSubmit} 
                 handleChange={this.handleChange}
                 handleLogin={this.handleLogin}
                 handleSignup={this.handleSignup}
+                user={this.state.user}
         />
         <Bot startListen={this.startListen}
              outputYou={this.state.outputYou}
              outputBot={this.state.outputBot}
+             handleLogout={this.handleLogout}
         />
       </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Bot.css'
 
-const Bot = ({startListen, outputYou, outputBot}) => (
+const Bot = ({startListen, outputYou, outputBot, handleLogout}) => (
     <div>
         <section>
             <h1>PrivBot</h1>
@@ -13,10 +13,8 @@ const Bot = ({startListen, outputYou, outputBot}) => (
                 <h3>You said: <em className="output-you">{outputYou}</em></h3>
                 <h3>Bot replied: <em className="output-bot">{outputBot}</em></h3>
             </div>
+            <button onClick={handleLogout}>Logout</button>
         </section>
-
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="js/script.js"></script>
     </div>
 )
 

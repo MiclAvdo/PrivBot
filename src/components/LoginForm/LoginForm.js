@@ -20,7 +20,7 @@ class LoginForm extends Component {
       userService.login(this.state)
       .then(() => {
         this.props.handleLogin();
-        this.props.history.push('/');
+        // this.props.history.push('/');
       })
       .catch(err => alert('Invalid Credentials'));
     }
@@ -44,7 +44,7 @@ class LoginForm extends Component {
             <div className="form-group">
               <div className="col-sm-12 text-center">
                 <button className="btn btn-default">Log In</button>
-                <a className="btn btn-default">Sign Up</a>
+                <a className="btn btn-default" onClick={this.props.toggleLogin}>Sign Up</a>
               </div>
             </div>
           </form>
