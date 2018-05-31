@@ -23,7 +23,6 @@ class SignupForm extends Component {
         userService.signup(this.state)
         .then(() => {
             this.props.handleSignup();
-            this.props.history('/');
         })
         .catch(err => alert('Invalid Credentials'));
     }

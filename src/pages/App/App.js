@@ -5,7 +5,7 @@ import userService from './../../utils/userService';
 import Bot from './../../components/Bot/Bot';
 import io from 'socket.io-client';
 
-const socket = io.connect('https://privbot.herokuapp.com/');
+const socket = io.connect();
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 window.recognition = new SpeechRecognition();
 
