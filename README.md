@@ -1,11 +1,3 @@
-A README.md file with:
-
-
-List of the technologies used.
-
-Descriptions of any Unsolved Problems (if any).
-Descriptions of Future Enhancements.
-
 # PrivBot
 The concept behind PrivBot is a digital assistant with a focus on security. Users will have their own login to secure their accounts, any data that is stored would be on a private server to avoid data harvisting for profit. As AI // DA tech becomes more integrated with our lives I believe there should be a parallel mindset along with machine learning that will keep user information secure, thus creating a more "human" AI as it enables the ability to keep secrets.
 
